@@ -9,7 +9,7 @@ const client  = require('twilio')(accountSid,authToken);
 app.use(body_parser.urlencoded({extended:true}));
 
 app.post('/sms', (req, res)=>{
-    const sms = req.body.sms
+    const sms = req.body
     client.messages.create({
         to: process.env.MY_PHONE_NUMBER,
         from: '+16625064671',
